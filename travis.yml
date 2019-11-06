@@ -1,0 +1,12 @@
+sudo: required
+language: python
+services:
+  - docker
+build:
+  script:
+    - docker build -t test:1.0 docker/
+deploy:
+  provider: script
+  script: docker
+  on:
+    branch: master
